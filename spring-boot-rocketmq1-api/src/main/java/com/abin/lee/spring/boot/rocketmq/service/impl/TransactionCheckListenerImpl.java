@@ -11,19 +11,22 @@ package com.abin.lee.spring.boot.rocketmq.service.impl;
  * http://blog.csdn.net/chunlongyu/article/details/53844393
  */
 
+import lombok.extern.slf4j.Slf4j;
 import org.apache.rocketmq.client.producer.LocalTransactionState;
 import org.apache.rocketmq.client.producer.TransactionCheckListener;
 import org.apache.rocketmq.common.message.MessageExt;
 
 import java.util.concurrent.atomic.AtomicInteger;
 
+@Slf4j
 public class TransactionCheckListenerImpl implements TransactionCheckListener {
     private AtomicInteger transactionIndex = new AtomicInteger(0);
 
     @Override
     public LocalTransactionState checkLocalTransactionState(MessageExt msg) {
-        System.out.println("-----------------------------LocalTransactionState-----checkLocalTransactionState------------------------------------------------");
-        System.out.printf("server checking TrMsg %s%n", msg);
+        log.info("-----------------------------LocalTransactionState-----checkLocalTransactionState------------------------------------------------");
+        log.info("server checking TrMsg %s%n", msg);
+        log.info("-----------------------------LocalTransactionState-----checkLocalTransactionState------------------------------------------------");
 
         int value = transactionIndex.getAndIncrement();
         if ((value % 6) == 0) {
