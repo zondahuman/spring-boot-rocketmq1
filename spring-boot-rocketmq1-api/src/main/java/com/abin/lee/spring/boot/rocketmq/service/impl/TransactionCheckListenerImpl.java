@@ -7,6 +7,8 @@ package com.abin.lee.spring.boot.rocketmq.service.impl;
  * 未决事务，服务器回查客户端
  * TransactionCheckListenerImpl--未决事务，服务器回查客户端(目前已经被阉割啦)
  * https://www.cnblogs.com/520playboy/p/6750023.html
+ * RocketMQ会定期（默认是1分钟）扫描所有的Prepared消息，询问发送方，到底是要确认这条消息发出去？还是取消此条消息？
+ * http://blog.csdn.net/chunlongyu/article/details/53844393
  */
 
 import org.apache.rocketmq.client.producer.LocalTransactionState;

@@ -14,7 +14,7 @@ import java.util.concurrent.atomic.AtomicInteger;
  * https://www.cnblogs.com/520playboy/p/6750023.html
  */
 public class TransactionExecuterImpl implements LocalTransactionExecuter {
-    private AtomicInteger transactionIndex = new AtomicInteger(1);
+    private AtomicInteger transactionIndex = new AtomicInteger(5);
 
     @Override
     public LocalTransactionState executeLocalTransactionBranch(final Message msg, final Object arg) {
@@ -22,9 +22,9 @@ public class TransactionExecuterImpl implements LocalTransactionExecuter {
 
         if (value == 0) {
             throw new RuntimeException("Could not find db");
-        } else if ((value % 5) == 0) {
+        } else if (value == 1) {
             return LocalTransactionState.ROLLBACK_MESSAGE;
-        } else if ((value % 4) == 0) {
+        } else if (value == 2) {
             return LocalTransactionState.COMMIT_MESSAGE;
         }
 
