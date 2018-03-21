@@ -28,7 +28,8 @@ public class TransactionProducer {
         producer.setCheckRequestHoldMax(200);
         producer.setTransactionCheckListener(transactionCheckListener);
 //        producer.setNamesrvAddr("172.16.2.133:9876");
-        producer.setNamesrvAddr("localhost:9876");
+        producer.setNamesrvAddr("127.0.0.1:9876");
+//        producer.setNamesrvAddr("localhost:9876");
 //        producer.setNamesrvAddr("zoo2:9876");
         producer.start();
 
