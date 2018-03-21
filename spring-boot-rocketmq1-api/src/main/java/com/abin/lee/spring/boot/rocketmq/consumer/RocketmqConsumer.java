@@ -21,7 +21,8 @@ import java.util.concurrent.atomic.AtomicLong;
 public class RocketmqConsumer {
     public static void main(String[] args) throws MQClientException {
         DefaultMQPushConsumer consumer = new DefaultMQPushConsumer("SPEED_QUEUE");
-        consumer.setNamesrvAddr("172.16.2.133:9876");
+//        consumer.setNamesrvAddr("172.16.2.133:9876");
+        consumer.setNamesrvAddr("localhost:9876");
 
         /**
          * 设置Consumer第一次启动是从队列头部开始消费还是队列尾部开始消费<br>
