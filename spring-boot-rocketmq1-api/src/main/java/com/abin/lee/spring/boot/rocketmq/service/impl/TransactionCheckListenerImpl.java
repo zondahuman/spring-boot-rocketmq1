@@ -24,6 +24,7 @@ public class TransactionCheckListenerImpl implements TransactionCheckListener {
 
     @Override
     public LocalTransactionState checkLocalTransactionState(MessageExt msg) {
+        System.out.println("##############################checkLocalTransactionState##################################");
         log.info("-----------------------------LocalTransactionState-----checkLocalTransactionState------------------------------------------------");
         log.info("server checking TrMsg %s%n", msg);
         log.info("-----------------------------LocalTransactionState-----checkLocalTransactionState------------------------------------------------");
