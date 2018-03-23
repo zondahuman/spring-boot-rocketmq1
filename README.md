@@ -32,8 +32,13 @@ bin/mqadmin consumerProgress -n 172.16.2.133:9876
 bin/mqadmin consumerProgress -n 172.16.2.133:9876 -g SPEED_QUEUE
 
 
+https://github.com/apache/rocketmq-externals
 
 
+启动rocketmq控制台：
+java -jar rocketmq-console-ng-1.0.0.jar --server.port=12581 --rocketmq.config.namesrvAddr=172.16.2.133:9876
 
+控制台界面：
+http://172.16.2.133:12581/
 
 
